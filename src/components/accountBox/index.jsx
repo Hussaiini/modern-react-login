@@ -6,7 +6,7 @@ import { AccountContext } from "./accountContext";
 import { SignupForm } from "./signupForm";
 
 const BoxContainer = styled.div`
-  width: 280px;
+  width: 480px;
   min-height: 550px;
   display: flex;
   flex-direction: column;
@@ -136,9 +136,12 @@ export function AccountBox(props) {
           />
           {active === "signin" && (
             <HeaderContainer>
-              <HeaderText>Welcome</HeaderText>
-              <HeaderText>Back</HeaderText>
+              <HeaderText >Al-Afiyah</HeaderText>
+              <HeaderText>Fleet Management</HeaderText>
+              {/* <HeaderText>Back</HeaderText> */}
+              {/* <SmallText>Oasis Fleet Management</SmallText> */}
               <SmallText>Please sign-in to continue!</SmallText>
+              
             </HeaderContainer>
           )}
           {active === "signup" && (

@@ -1,6 +1,9 @@
+import React from 'react'
 import "./App.css";
 import styled from "styled-components";
 import { AccountBox } from "./components/accountBox";
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import AdminDashboard from './pages/AdminDashboard'
 
 const AppContainer = styled.div`
   width: 100%;
@@ -13,9 +16,16 @@ const AppContainer = styled.div`
 
 function App() {
   return (
+    <Router>
     <AppContainer>
       <AccountBox />
     </AppContainer>
+    <Routes>
+      <Route path="/adminPage" element={<AdminDashboard/>}/>
+
+    
+    </Routes>
+    </Router>
   );
 }
 
