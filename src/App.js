@@ -23,7 +23,8 @@ function App() {
     <Routes>
       <Route path="/adminPage" element={<AdminDashboard/>}/>
 
-    
+      {/* <Route path="/adminPage" element={<AdminDashboard/>}/> */}
+
     </Routes>
     </Router>
   );
