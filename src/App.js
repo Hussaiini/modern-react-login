@@ -4,6 +4,9 @@ import styled from "styled-components";
 import { AccountBox } from "./components/accountBox";
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import AdminDashboard from './pages/AdminDashboard'
+import HomePage from './pages/HomePage'
+ import loginForm from "./components/accountBox/loginForm"
+ //import AccountBox from "./components/accountBox"
 
 const AppContainer = styled.div`
   width: 100%;
@@ -17,11 +20,13 @@ const AppContainer = styled.div`
 function App() {
   return (
     <Router>
-    <AppContainer>
-      <AccountBox />
-    </AppContainer>
+     
+    
     <Routes>
-      <Route path="/adminPage" element={<AdminDashboard/>}/>
+    <Route path ="/" element ={<AppContainer><AccountBox /></AppContainer>}/>
+      {/* <Route path="/" element={<loginForm/>}/> */}
+      <Route path="/aDashBoard" element={<AdminDashboard/>} />
+      <Route path="/homepage" element ={<HomePage/>} />
 
       {/* <Route path="/adminPage" element={<AdminDashboard/>}/> */}
 
