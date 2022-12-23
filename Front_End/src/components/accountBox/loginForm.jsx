@@ -9,7 +9,7 @@ import {
 } from "./common";
 import { Marginer } from "../marginer";
 import { AccountContext } from "./accountContext";
-import { Navigate } from 'react-router-dom';
+import { Navigate,Link } from 'react-router-dom';
 import Axios from "axios";
 
 export function LoginForm(props) {
@@ -35,7 +35,9 @@ export function LoginForm(props) {
 
       const login=()=>{
           Axios.post("http://localhost:3010/api/insert", {userId: userId, email: email,}).then(()=>{
-            alert("record saved!")
+           // alert("record saved!")
+          <Navigate to ="/aDashBoard" />;
+            
           })
       }
   return (
@@ -55,8 +57,8 @@ export function LoginForm(props) {
       <MutedLink href="#">Forget your password?</MutedLink>
       <Marginer direction="vertical" margin="1.6em" />
       {/* <SubmitButton type="submit">Signin</SubmitButton> */}
-      {/* <SubmitButton type="submit" onClick={login}>login</SubmitButton> */}
-      <button onClick={login}>Login</button>
+      <SubmitButton type="submit" onClick={login}>login</SubmitButton>
+      {/* <button onClick={login}>Login</button> */}
       <Marginer direction="vertical" margin="1em" />
       <MutedLink href="#">
         Don't have an accoun?{" "}
@@ -64,7 +66,7 @@ export function LoginForm(props) {
           Signup
           
         </BoldLink>
-        {/* <Link to="/login">Log In</Link> */}
+        {/* <Link to="/homepage">Log In</Link> */}
 
       </MutedLink>
     </BoxContainer>
