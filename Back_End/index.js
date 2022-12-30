@@ -45,10 +45,37 @@ app.post("/api/insert", (req, res)=>{
         res.send("Record Inserted!")
     })
 
-})}
+   
+
+})
+app.post("/login", (req, res)=>{
+    const username = req.body.username
+    const password = req.body.password
+    db.query(`SELECT * FROM kekedb.users_tbl WHERE username = ? AND password =?;`,
+    [username, password],
+    (err, result)=>{
+
+        if(err){
+        res.send({err: err});}
+      
+            if (result.length > 0){
+                res.send(result)
+            }else{
+                res.send({message:"No user found...!"})
+            
+        }
+      
+    }
+    )
+}
+)
+}
 catch (err){
     console.log(err)
 }
+
+
+
 // app.get("/", (req, res)=>{
 //     const sqlInsert =`INSERT INTO kekedb.users_tbl (user_id, first_name, middle_name, last_name,  tel_no, address, email,password) VALUES ('003', 'Aisha','Lawal','Gambo', '08122224888', 'Wuse II', 'hussaiini@yahoo.com', 'Bond007' );`
 //     db.query(sqlInsert, (err,result)=>{
